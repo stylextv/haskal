@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import de.stylextv.haskal.command.message.Message;
 import de.stylextv.haskal.game.Game;
 
 public class InputController {
@@ -29,7 +30,9 @@ public class InputController {
 				
 				if(s == null) break;
 				
-				CommandManager.parseMessage(s);
+				Message m = Message.fromString(s);
+				
+				CommandManager.parseMessage(m);
 			}
 			
 			onStop();
@@ -41,6 +44,18 @@ public class InputController {
 	
 	public static void stop() {
 		active = false;
+	}
+	
+	public static void sendMessage(String name, String... args) {
+		Message m = new Message(name, args);
+		
+		sendMessage(m);
+	}
+	
+	public static void sendMessage(Message m) {
+		String s = m.toString();
+		
+		System.out.println(s);
 	}
 	
 	private static void onStart() {

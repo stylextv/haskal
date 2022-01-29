@@ -11,7 +11,7 @@ public class Haskal {
 	}
 	
 	public void onStart() {
-		System.out.println(Constants.NAME + " " + Constants.VERSION + " by " + Constants.AUTHOR);
+		InputController.sendMessage(Constants.VERSIONED_NAME + " by " + Constants.AUTHOR);
 		
 		InputController.start();
 	}

@@ -1,6 +1,6 @@
 package de.stylextv.haskal.command;
 
-import de.stylextv.haskal.command.argument.ArgumentList;
+import de.stylextv.haskal.command.message.Message;
 
 public abstract class Command {
 	
@@ -10,7 +10,7 @@ public abstract class Command {
 		this.name = name;
 	}
 	
-	public abstract void execute(ArgumentList list);
+	public abstract void execute(Message m);
 	
 	public String getName() {
 		return name;
