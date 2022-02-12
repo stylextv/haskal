@@ -1,14 +1,22 @@
 package de.stylextv.haskal.command;
 
+import de.stylextv.haskal.command.commands.GoCommand;
 import de.stylextv.haskal.command.commands.InfoCommand;
 import de.stylextv.haskal.command.commands.NewGameCommand;
+import de.stylextv.haskal.command.commands.OptionCommand;
+import de.stylextv.haskal.command.commands.PositionCommand;
 import de.stylextv.haskal.command.commands.QuitCommand;
 import de.stylextv.haskal.command.commands.ReadyCommand;
+import de.stylextv.haskal.command.commands.StopCommand;
 import de.stylextv.haskal.command.message.Message;
 
 public class CommandManager {
 	
 	public static final Command[] COMMANDS = new Command[] {
+			new PositionCommand(),
+			new GoCommand(),
+			new StopCommand(),
+			new OptionCommand(),
 			new NewGameCommand(),
 			new ReadyCommand(),
 			new InfoCommand(),
