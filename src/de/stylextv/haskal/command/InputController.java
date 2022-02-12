@@ -5,11 +5,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 import de.stylextv.haskal.command.message.Message;
-import de.stylextv.haskal.game.Game;
+import de.stylextv.haskal.game.board.Board;
 
 public class InputController {
 	
-	private static Game game;
+	private static Board board;
 	
 	private static boolean active;
 	
@@ -66,8 +66,8 @@ public class InputController {
 		
 	}
 	
-	public static Game getGame() {
-		return game;
+	public static Board getBoard() {
+		return board;
 	}
 	
 	public static boolean isActive() {
