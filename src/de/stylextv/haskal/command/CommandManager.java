@@ -12,7 +12,7 @@ import de.stylextv.haskal.command.message.Message;
 
 public class CommandManager {
 	
-	public static final Command[] COMMANDS = new Command[] {
+	private static final Command[] COMMANDS = new Command[] {
 			new PositionCommand(),
 			new GoCommand(),
 			new StopCommand(),

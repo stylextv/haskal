@@ -1,5 +1,6 @@
 package de.stylextv.haskal.game.board.bitboard;
 
+import de.stylextv.haskal.game.board.bitboard.bitboards.PositionBitboard;
 import de.stylextv.haskal.game.board.square.BoardSquare;
 
 public class Bitboard {
@@ -7,18 +8,24 @@ public class Bitboard {
 	public static final long EMPTY = 0;
 	public static final long FULL = -1;
 	
-	public static long firstSquare(long bb) {
+	public static int firstSquare(long bb) {
 		return Long.numberOfTrailingZeros(bb);
 	}
 	
-	public static long lastSquare() {
+	public static int lastSquare() {
 		int i = Long.numberOfLeadingZeros(EMPTY);
 		
 		return BoardSquare.H8 - i;
 	}
 	
-	public static long squareCount(long bb) {
+	public static int squareCount(long bb) {
 		return Long.bitCount(bb);
+	}
+	
+	public static long flipSquare(long bb, int square) {
+		long mask = PositionBitboard.ofSquare(square);
+		
+		return xor(bb, mask);
 	}
 	
 	// TODO prevent over-/underflow
