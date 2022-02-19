@@ -55,6 +55,18 @@ public class Board {
 		}
 	}
 	
+	public long getPieceBitboard(int color, int type) {
+		return bitboards.getPieceBitboard(color, type);
+	}
+	
+	public long getColorBitboard(int color) {
+		return bitboards.getColorBitboard(color);
+	}
+	
+	public long getTypeBitboard(int color) {
+		return bitboards.getTypeBitboard(color);
+	}
+	
 	public int getPieceSquare(int piece, int index) {
 		return pieces.getPieceSquare(piece, index);
 	}

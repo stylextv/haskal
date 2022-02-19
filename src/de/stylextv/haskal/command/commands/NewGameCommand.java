@@ -10,6 +10,8 @@ public class NewGameCommand extends Command {
 	}
 	
 	@Override
-	public void execute(Message m) {}
+	public void execute(Message m) {
+		// TODO clear TT and such?
+	}
 	
 }

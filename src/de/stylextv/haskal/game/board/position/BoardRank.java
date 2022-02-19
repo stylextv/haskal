@@ -1,4 +1,4 @@
-package de.stylextv.haskal.game.board.square;
+package de.stylextv.haskal.game.board.position;
 
 public class BoardRank {
 	

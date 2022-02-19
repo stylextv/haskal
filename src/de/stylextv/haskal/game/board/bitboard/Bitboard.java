@@ -1,7 +1,7 @@
 package de.stylextv.haskal.game.board.bitboard;
 
 import de.stylextv.haskal.game.board.bitboard.bitboards.PositionBitboard;
-import de.stylextv.haskal.game.board.square.BoardSquare;
+import de.stylextv.haskal.game.board.position.BoardSquare;
 
 public class Bitboard {
 	

@@ -1,6 +1,6 @@
-package de.stylextv.haskal.game.board.ray;
+package de.stylextv.haskal.game.board.direction;
 
-public class RayDirection {
+public class BoardDirection {
 	
 	public static final int NORTH = 8;
 	public static final int NORTH_EAST = 9;
@@ -12,5 +12,15 @@ public class RayDirection {
 	
 	public static final int EAST = 1;
 	public static final int WEST = -1;
+	
+	private static final int[] DIRECTIONS = new int[] {
+			NORTH, NORTH_EAST, NORTH_WEST,
+			SOUTH, SOUTH_EAST, SOUTH_WEST,
+			EAST, WEST
+	};
+	
+	public static int[] getDirections() {
+		return DIRECTIONS;
+	}
 	
 }
