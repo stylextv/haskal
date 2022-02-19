@@ -5,6 +5,7 @@ import de.stylextv.haskal.game.board.view.views.BitboardView;
 import de.stylextv.haskal.game.board.view.views.HashView;
 import de.stylextv.haskal.game.board.view.views.PieceView;
 import de.stylextv.haskal.game.board.view.views.SquareView;
+import de.stylextv.haskal.game.piece.Piece;
 
 public class Board {
 	
@@ -25,6 +26,8 @@ public class Board {
 			hash
 	};
 	
+	// TODO make/unmake move
+	
 	public void movePiece(int from, int to) {
 		int piece = getPiece(from);
 		
@@ -35,6 +38,8 @@ public class Board {
 	public void removePiece(int square) {
 		int piece = getPiece(square);
 		
+		if(piece == Piece.NONE) return;
+		
 		for(BoardView view : views) {
 			
 			view.removePiece(square, piece);
@@ -42,6 +47,8 @@ public class Board {
 	}
 	
 	public void setPiece(int square, int piece) {
+		removePiece(square);
+		
 		for(BoardView view : views) {
 			
 			view.setPiece(square, piece);
