@@ -9,14 +9,16 @@ public abstract class MoveGenerator {
 	
 	public static final MoveGenerator KNIGHT = ;
 	
-	public static final MoveGenerator KING = ;
-	
 	public static final MoveGenerator BISHOP = ;
 	
 	public static final MoveGenerator ROOK = ;
 	
+	public static final MoveGenerator QUEEN = ;
+	
+	public static final MoveGenerator KING = ;
+	
 	private static final MoveGenerator[] GENERATORS = new MoveGenerator[] {
-			PAWN, KNIGHT, KING, BISHOP, ROOK
+			PAWN, KNIGHT, BISHOP, ROOK, QUEEN, KING
 	};
 	
 	public abstract void generateMoves(Board board, MoveList list);
