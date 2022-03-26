@@ -89,11 +89,11 @@ public class Board {
 	}
 	
 	public int getTurn() {
-		return turn.getColor();
+		return turn.getValue();
 	}
 	
 	public void setTurn(int color) {
-		turn.setColor(color);
+		turn.setValue(color);
 	}
 	
 	public BoardProperty[] getProperties() {

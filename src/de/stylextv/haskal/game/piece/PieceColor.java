@@ -10,6 +10,12 @@ public class PieceColor {
 	
 	public static final int NONE = SerializeObject.EMPTY;
 	
+	public static int opposite(int color) {
+		if(color == WHITE) return BLACK;
+		
+		return WHITE;
+	}
+	
 	public static int ofPiece(int piece) {
 		return Serializer.PIECE.getComponent(piece, Serializer.PIECE_COLOR);
 	}
