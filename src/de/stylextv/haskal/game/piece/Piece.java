@@ -1,5 +1,7 @@
 package de.stylextv.haskal.game.piece;
 
+import de.stylextv.haskal.game.serialize.SerializeObject;
+
 public class Piece {
 	
 	public static final int WHITE_PAWN = ;
@@ -16,7 +18,7 @@ public class Piece {
 	public static final int BLACK_QUEEN = ;
 	public static final int BLACK_KING = ;
 	
-	public static final int NONE = 0;
+	public static final int NONE = SerializeObject.EMPTY;
 	
 	public static int from(int color, int type) {
 		

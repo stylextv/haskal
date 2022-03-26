@@ -1,7 +1,21 @@
 package de.stylextv.haskal.game.piece;
 
-public enum PieceType {
+import de.stylextv.haskal.game.serialize.SerializeObject;
+import de.stylextv.haskal.game.serialize.Serializer;
+
+public class PieceType {
 	
-	NONE, PAWN, KNIGHT, BISHOP, ROOK, QUEEN, KING;
+	public static final int PAWN = 1;
+	public static final int KNIGHT = 2;
+	public static final int BISHOP = 3;
+	public static final int ROOK = 4;
+	public static final int QUEEN = 5;
+	public static final int KING = 6;
+	
+	public static final int NONE = SerializeObject.EMPTY;
+	
+	public static int ofPiece(int piece) {
+		return Serializer.PIECE.getComponent(piece, Serializer.PIECE_TYPE);
+	}
 	
 }
