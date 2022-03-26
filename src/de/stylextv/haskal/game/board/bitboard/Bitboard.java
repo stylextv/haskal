@@ -22,6 +22,12 @@ public class Bitboard {
 		return Long.bitCount(bb);
 	}
 	
+	public static boolean containsSquare(long bb, int square) {
+		long mask = PositionBitboard.ofSquare(square);
+		
+		return intersects(bb, mask);
+	}
+	
 	public static long flipSquare(long bb, int square) {
 		long mask = PositionBitboard.ofSquare(square);
 		
@@ -33,6 +39,10 @@ public class Bitboard {
 		
 		
 		return dir < 0 ? bb >>> -dir : bb << dir;
+	}
+	
+	public static boolean intersects(long bb1, long bb2) {
+		return intersection(bb1, bb2) != EMPTY;
 	}
 	
 	public static long intersection(long bb1, long bb2) {
