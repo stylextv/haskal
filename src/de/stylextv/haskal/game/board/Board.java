@@ -1,5 +1,7 @@
 package de.stylextv.haskal.game.board;
 
+import de.stylextv.haskal.game.board.property.BoardProperty;
+import de.stylextv.haskal.game.board.property.properties.TurnProperty;
 import de.stylextv.haskal.game.board.view.BoardView;
 import de.stylextv.haskal.game.board.view.views.BitboardView;
 import de.stylextv.haskal.game.board.view.views.HashView;
@@ -8,6 +10,8 @@ import de.stylextv.haskal.game.board.view.views.SquareView;
 import de.stylextv.haskal.game.piece.Piece;
 
 public class Board {
+	
+	private TurnProperty turn = new TurnProperty();
 	
 	
 	
@@ -18,6 +22,11 @@ public class Board {
 	private BitboardView bitboards = new BitboardView();
 	
 	private HashView hash = new HashView();
+	
+	private BoardProperty[] properties = new BoardProperty[] {
+			turn,
+			
+	};
 	
 	private BoardView[] views = new BoardView[] {
 			squares,
@@ -77,6 +86,18 @@ public class Board {
 	
 	public int getPiece(int square) {
 		return squares.getPiece(square);
+	}
+	
+	public int getTurn() {
+		return turn.getColor();
+	}
+	
+	public void setTurn(int color) {
+		turn.setColor(color);
+	}
+	
+	public BoardProperty[] getProperties() {
+		return properties;
 	}
 	
 	public BoardView[] getViews() {

@@ -1,5 +1,7 @@
 package de.stylextv.haskal.game.board.bitboard.bitboards;
 
+import de.stylextv.haskal.game.board.bitboard.Bitboard;
+
 public class PositionBitboard {
 	
 	public static final long A1 = 0x0000000000000001;
@@ -115,6 +117,14 @@ public class PositionBitboard {
 			G1, G2, G3, G4, G5, G6, G7, G8,
 			H1, H2, H3, H4, H5, H6, H7, H8
 	};
+	
+	public static boolean containsDarkSquares(long bb) {
+		return Bitboard.intersects(bb, DARK_SQUARES);
+	}
+	
+	public static boolean containsLightSquares(long bb) {
+		return Bitboard.intersects(bb, LIGHT_SQUARES);
+	}
 	
 	public static long ofFile(int file) {
 		return FILES[file];
