@@ -7,6 +7,7 @@ import de.stylextv.haskal.game.board.view.views.BitboardView;
 import de.stylextv.haskal.game.board.view.views.HashView;
 import de.stylextv.haskal.game.board.view.views.PieceView;
 import de.stylextv.haskal.game.board.view.views.SquareView;
+import de.stylextv.haskal.game.move.MoveProcessor;
 import de.stylextv.haskal.game.piece.Piece;
 
 public class Board {
@@ -35,7 +36,15 @@ public class Board {
 			hash
 	};
 	
-	// TODO make/unmake move
+	private MoveProcessor moveProcessor = new MoveProcessor(this);
+	
+	public void makeMove(int move) {
+		moveProcessor.makeMove(move);
+	}
+	
+	public void unmakeMove(int move) {
+		moveProcessor.unmakeMove(move);
+	}
 	
 	public void movePiece(int from, int to) {
 		int piece = getPiece(from);
