@@ -1,6 +1,10 @@
 package de.stylextv.haskal.game.board;
 
 import de.stylextv.haskal.game.board.property.BoardProperty;
+import de.stylextv.haskal.game.board.property.properties.CastleProperty;
+import de.stylextv.haskal.game.board.property.properties.EnPassantProperty;
+import de.stylextv.haskal.game.board.property.properties.FiftyRuleProperty;
+import de.stylextv.haskal.game.board.property.properties.PlyProperty;
 import de.stylextv.haskal.game.board.property.properties.TurnProperty;
 import de.stylextv.haskal.game.board.view.BoardView;
 import de.stylextv.haskal.game.board.view.views.BitboardView;
@@ -14,7 +18,13 @@ public class Board {
 	
 	private TurnProperty turn = new TurnProperty();
 	
+	private PlyProperty ply = new PlyProperty();
 	
+	private FiftyRuleProperty fiftyRule = new FiftyRuleProperty();
+	
+	private CastleProperty castle = new CastleProperty();
+	
+	private EnPassantProperty enPassant = new EnPassantProperty();
 	
 	private SquareView squares = new SquareView();
 	
@@ -26,7 +36,10 @@ public class Board {
 	
 	private BoardProperty[] properties = new BoardProperty[] {
 			turn,
-			
+			ply,
+			fiftyRule,
+			castle,
+			enPassant
 	};
 	
 	private BoardView[] views = new BoardView[] {
@@ -101,8 +114,20 @@ public class Board {
 		return turn.getValue();
 	}
 	
-	public void setTurn(int color) {
-		turn.setValue(color);
+	public int getPly() {
+		return ply.getValue();
+	}
+	
+	public int getFiftyRule() {
+		return fiftyRule.getValue();
+	}
+	
+	public boolean canCastle(int color, int side) {
+		return castle.canCastle(color, side);
+	}
+	
+	public int getEnPassantSquare() {
+		return enPassant.getValue();
 	}
 	
 	public BoardProperty[] getProperties() {

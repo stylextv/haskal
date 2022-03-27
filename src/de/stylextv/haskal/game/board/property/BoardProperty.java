@@ -4,9 +4,9 @@ public abstract class BoardProperty {
 	
 	private int value;
 	
-	public abstract void onMoveMake();
+	public abstract void onMoveMake(int move);
 	
-	public abstract void onMoveUnmake();
+	public abstract void onMoveUnmake(int move);
 	
 	public int getValue() {
 		return value;

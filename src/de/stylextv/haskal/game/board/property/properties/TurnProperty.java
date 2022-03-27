@@ -6,7 +6,7 @@ import de.stylextv.haskal.game.piece.PieceColor;
 public class TurnProperty extends SymmetricProperty {
 	
 	@Override
-	public void onMove() {
+	public void onMove(int move) {
 		int color = getValue();
 		
 		color = PieceColor.opposite(color);

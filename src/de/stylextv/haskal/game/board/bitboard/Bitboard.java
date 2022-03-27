@@ -41,6 +41,10 @@ public class Bitboard {
 		return dir < 0 ? bb >>> -dir : bb << dir;
 	}
 	
+	public static boolean contains(long bb1, long bb2) {
+		return intersection(bb1, bb2) == bb2;
+	}
+	
 	public static boolean intersects(long bb1, long bb2) {
 		return intersection(bb1, bb2) != EMPTY;
 	}

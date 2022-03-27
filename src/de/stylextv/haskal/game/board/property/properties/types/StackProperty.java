@@ -6,16 +6,16 @@ public abstract class StackProperty extends BoardProperty {
 	
 	private int[] values = new int[];
 	
-	public abstract void onMove();
+	public abstract void onMove(int move);
 	
 	@Override
-	public void onMoveMake() {
+	public void onMoveMake(int move) {
 		// TODO Auto-generated method stub
 		
 	}
 	
 	@Override
-	public void onMoveUnmake() {
+	public void onMoveUnmake(int move) {
 		// TODO Auto-generated method stub
 		
 	}
