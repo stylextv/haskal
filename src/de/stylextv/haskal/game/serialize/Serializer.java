@@ -16,7 +16,11 @@ public class Serializer {
 	
 	public static final Serializer MOVE_FLAG = new Serializer(3);
 	
-	public static final Serializer MOVE = new Serializer(MOVE_TYPE, MOVE_FLAG);
+	public static final Serializer MOVE_SOURCE = new Serializer(SQUARE);
+	
+	public static final Serializer MOVE_TARGET = new Serializer(SQUARE);
+	
+	public static final Serializer MOVE = new Serializer(MOVE_TYPE, MOVE_FLAG, MOVE_SOURCE, MOVE_TARGET);
 	
 	private int length;
 	
