@@ -6,14 +6,22 @@ public class MoveList {
 	
 	private int[] moves;
 	
-	public MoveList(int size) {
-		
+	private int size;
+	
+	public MoveList() {
+		this();
 	}
 	
+	public MoveList(int size) {
+		moves = new int[size];
+	}
 	
+	public void clear() {
+		size = 0;
+	}
 	
 	public int size() {
-		return moves.length;
+		return size;
 	}
 	
 	public int[] getMoves() {

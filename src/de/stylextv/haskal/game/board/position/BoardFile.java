@@ -1,5 +1,7 @@
 package de.stylextv.haskal.game.board.position;
 
+import de.stylextv.haskal.game.serialize.Serializer;
+
 public class BoardFile {
 	
 	public static final int A_FILE = 0;
@@ -12,7 +14,7 @@ public class BoardFile {
 	public static final int H_FILE = 7;
 	
 	public static int fromSquare(int square) {
-		return square & 7;
+		return Serializer.SQUARE.getComponent(square, Serializer.FILE);
 	}
 	
 }

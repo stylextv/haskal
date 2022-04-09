@@ -1,5 +1,7 @@
 package de.stylextv.haskal.game.board.position;
 
+import de.stylextv.haskal.game.serialize.Serializer;
+
 public class BoardRank {
 	
 	public static final int RANK_1 = 0;
@@ -12,7 +14,7 @@ public class BoardRank {
 	public static final int RANK_8 = 7;
 	
 	public static int fromSquare(int square) {
-		return square >> 3;
+		return Serializer.SQUARE.getComponent(square, Serializer.RANK);
 	}
 	
 }
